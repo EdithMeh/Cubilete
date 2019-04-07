@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         imgDado5 = (ImageView) findViewById(R.id.imageView6);
         imgDado6 = (ImageView) findViewById(R.id.imageView7);
         txtjuego = findViewById(R.id.textView);
+        Button menos = findViewById(R.id.button3);
+        menos.setEnabled(false);
+
     }
 
     int filaDados = 1;
@@ -113,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (event.accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE) {
 
             if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-                 return;
+                return;
             }
         }
 
@@ -147,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 soundAcc.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                       // Toast.makeText(MainActivity.this, "I'm Finished", Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(MainActivity.this, "I'm Finished", Toast.LENGTH_SHORT).show();
                         int dado1 = ((int) (Math.random() * 6)) + 1;
                         int dado2 = ((int) (Math.random() * 6)) + 1;
                         int dado3 = ((int) (Math.random() * 6)) + 1;
@@ -156,11 +159,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         int dado6 = ((int) (Math.random() * 6)) + 1;
                         imgDado1.setImageResource(imageAm[dado1 - 1]);
                         imgDado2.setImageResource(imageAm[dado2 - 1]);
-                        if (filaDados == 1){
+                        if (filaDados == 1) {
                             imgDado1.setVisibility(View.VISIBLE);
                             imgDado2.setVisibility(View.VISIBLE);
                         }
-                        if (filaDados == 2){
+                        if (filaDados == 2) {
                             imgDado3.setImageResource(image[dado3 - 1]);
                             imgDado4.setImageResource(image[dado4 - 1]);
                             imgDado1.setVisibility(View.VISIBLE);
@@ -168,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                             imgDado3.setVisibility(View.VISIBLE);
                             imgDado4.setVisibility(View.VISIBLE);
                         }
-                        if (filaDados == 3){
+                        if (filaDados == 3) {
                             imgDado5.setImageResource(imageRo[dado5 - 1]);
                             imgDado6.setImageResource(imageRo[dado6 - 1]);
                             imgDado1.setVisibility(View.VISIBLE);
@@ -190,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
 
-    public void mas(View v){
+    public void mas(View v) {
         imgDado1.setVisibility(View.INVISIBLE);
         imgDado2.setVisibility(View.INVISIBLE);
         imgDado3.setVisibility(View.INVISIBLE);
@@ -199,16 +202,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         imgDado6.setVisibility(View.INVISIBLE);
         Button mas = findViewById(R.id.button2);
         Button menos = findViewById(R.id.button3);
-        if (filaDados == 1){
+        if (filaDados == 1) {
             menos.setEnabled(true);
         }
         filaDados++;
-        if (filaDados == 3){
+        if (filaDados == 3) {
             mas.setEnabled(false);
         }
     }
 
-    public void menos(View v){
+    public void menos(View v) {
         imgDado1.setVisibility(View.INVISIBLE);
         imgDado2.setVisibility(View.INVISIBLE);
         imgDado3.setVisibility(View.INVISIBLE);
@@ -217,11 +220,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         imgDado6.setVisibility(View.INVISIBLE);
         Button mas = findViewById(R.id.button2);
         Button menos = findViewById(R.id.button3);
-        if (filaDados == 3){
+        if (filaDados == 3) {
             mas.setEnabled(true);
         }
         filaDados--;
-        if (filaDados == 1){
+        if (filaDados == 1) {
             menos.setEnabled(false);
         }
     }
