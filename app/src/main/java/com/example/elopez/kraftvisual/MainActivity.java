@@ -234,6 +234,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         txtjuego.setText("");
         imgDado1.setVisibility(View.INVISIBLE);
         imgDado2.setVisibility(View.INVISIBLE);
+        imgDado3.setVisibility(View.INVISIBLE);
+        imgDado4.setVisibility(View.INVISIBLE);
+        imgDado5.setVisibility(View.INVISIBLE);
+        imgDado6.setVisibility(View.INVISIBLE);
         vaso.setImageResource(R.drawable.cub);
         super.onResume();
         mSensorManager.registerListener(this, mSensorAcc, SensorManager.SENSOR_DELAY_NORMAL);
